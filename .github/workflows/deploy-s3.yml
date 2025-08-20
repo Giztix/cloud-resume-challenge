@@ -4,14 +4,17 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # Optional manual trigger
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -19,14 +22,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-southeast-2  # Sydney region
 
+      # 3️⃣ Sync files to S3
       - name: Sync files to S3
         run: |
           aws s3 sync . s3://$BUCKET_NAME --delete --exclude ".git/*" --exact-timestamps
         env:
           BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
 
-      # Optional: Invalidate CloudFront cache if using CloudFront
+      # 4️⃣ Optional: Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
-        if: ${{ secrets.CLOUDFRONT_DIST_ID }}
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} --paths "/*"
+          if [ -n "$CLOUDFRONT_DIST_ID" ]; then
+            echo "Invalidating CloudFront distribution $CLOUDFRONT_DIST_ID..."
+            aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DIST_ID" --paths "/*"
+          else
+            echo "No CloudFront distribution ID set; skipping invalidation."
+          fi
+        env:
+          CLOUDFRONT_DIST_ID: ${{ secrets.CLOUDFRONT_DIST_ID }}
