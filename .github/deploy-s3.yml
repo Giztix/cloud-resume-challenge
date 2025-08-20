@@ -21,7 +21,9 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync . s3://itinteang-cloud-resume-bucket --delete --exclude ".git/*" --exact-timestamps
+          aws s3 sync . s3://$BUCKET_NAME --delete --exclude ".git/*" --exact-timestamps
+        env:
+          BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
 
       # Optional: Invalidate CloudFront cache if using CloudFront
       - name: Invalidate CloudFront cache
