@@ -28,3 +28,11 @@ CI/CD Pipeline (Front end)
 <br>
 <img width="603" height="484" alt="Screenshot 2025-08-23 at 5 06 36 PM" src="https://github.com/user-attachments/assets/428920e7-3307-44c4-907c-d2fc518ab9b6" />
 
+<br><br>
+⚙️ Tech Stack
+
+Frontend: HTML, CSS (custom design)
+
+Cloud Provider: AWS (S3, CloudFront, Route 53, ACM, IAM)
+
+CI/CD: GitHub Actions
