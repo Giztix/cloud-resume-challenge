@@ -29,7 +29,7 @@ jobs:
         env:
           BUCKET_NAME: ${{ secrets.AWS_BUCKET_NAME }}
 
-      # 4️⃣ Optional: Invalidate CloudFront cache
+      # Invalidate CloudFront cache
       - name: Invalidate CloudFront cache
         run: |
           if [ -n "$CLOUDFRONT_DIST_ID" ]; then
