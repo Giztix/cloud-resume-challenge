@@ -4,7 +4,7 @@ This project is my implementation of the Cloud Resume Challenge, showcasing clou
 
 <br>
 
-<a> href="[https://example.com](https://resume.itinteang-cloud.co.nz)" target="_blank">Checkout my Resume on the Cloud here!</a>
+<a href="[https://example.com](https://resume.itinteang-cloud.co.nz)" target="_blank">Checkout my Resume on the Cloud here!</a>
 
 <br>
 
