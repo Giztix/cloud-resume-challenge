@@ -1,6 +1,9 @@
 🌩️ Cloud Resume Challenge
 
 This project is my implementation of the Cloud Resume Challenge, showcasing cloud, DevOps, and automation skills by deploying a static resume website on AWS with a CI/CD pipeline. You'll have to excuse my inexperience with coding I'm still on that journey but keen to focus moreso on the deployment of AWS resources.
+
+<br>
+Check out my [Cloud Resume here](https://resume.itinteang-cloud.co.nz).
 <br>
 
 Project Overview
