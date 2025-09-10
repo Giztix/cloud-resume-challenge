@@ -1,43 +1,42 @@
-🌩️ Cloud Resume Challenge
+## Cloud Resume Challenge
 
-This project is my implementation of the Cloud Resume Challenge, showcasing cloud, DevOps, and automation skills by deploying a static resume website on AWS with a CI/CD pipeline. You'll have to excuse my inexperience with coding I'm still on that journey but keen to focus moreso on the deployment of AWS resources.
+This project is my implementation of the Cloud Resume Challenge, showcasing cloud, DevOps, and automation skills by deploying a static resume website on AWS with a CI/CD pipeline.
 
-<br>
-
-<a href="https://resume.itinteang-cloud.co.nz" target="_blank">Checkout my Resume on the Cloud here!</a>
+I’m still early in my coding journey, but this project focuses on designing, deploying, and securing AWS resources to deliver a working cloud-based resume site.
 
 <br>
 
-Project Overview
-Currently, the project includes:
+<a href="https://resume.itinteang-cloud.co.nz" target="_blank">Checkout my Resume on the AWS Cloud here!</a>
 
-* A static HTML/CSS resume site.
-* Hosting on S3 with global distribution via CloudFront.
-* HTTPS enabled using AWS Certificate Manager (ACM).
-* Custom domain configured via Route 53.
-* Automated frontend deployment using GitHub Actions and an IAM user for secure S3 access.
 <br>
-Planned features to be added in the future:
 
-* Visitor counter backend using Lambda functions, API Gateway, and DynamoDB.
-* Infrastructure as Code (IaC) using Terraform or CloudFormation.
-* Monitoring/logging via AWS CloudWatch for site and Lambda usage.
+## Project Overview
+
+# Currently implemented:
+
+* Frontend: Static HTML/CSS resume site hosted on S3.
+* Global Distribution: Served worldwide via CloudFront.
+
+* Security: HTTPS with AWS Certificate Manager (ACM).
+
+* Custom Domain: Managed through Route 53.
+
+* CI/CD Pipeline: Automated deployments with GitHub Actions, pushing updates securely to S3 and invalidating CloudFront cache.
+
+* Dynamic Backend: Visitor counter powered by AWS Lambda, exposed via API Gateway, with persistent storage in DynamoDB.
+
+# Planned improvements:
+
+* Infrastructure as Code (IaC): Migrate to Terraform for repeatable deployments.
+* Monitoring & Logging: Use CloudWatch dashboards, metrics, and alarms to track performance and usage.
+* Security Enhancements: Apply least-privilege IAM policies and explore adding AWS WAF for protection.
 
 <br> 
-🏗️ Architecture
-<br>
-<img width="766" height="272" alt="Screenshot 2025-08-23 at 4 51 17 PM" src="https://github.com/user-attachments/assets/33b33bc9-1d35-4c46-addb-38dd8f38ed8d" />
+<img width="580" height="398" alt="Screenshot 2025-09-10 at 9 03 09 PM" src="https://github.com/user-attachments/assets/92b8b5c9-28f6-4a57-8753-1a27323564b2" />
 
 <br><br>
-CI/CD Pipeline (Front end)
-<br>
-<img width="603" height="484" alt="Screenshot 2025-08-23 at 5 06 36 PM" src="https://github.com/user-attachments/assets/428920e7-3307-44c4-907c-d2fc518ab9b6" />
+## Tech Stack
 
-<br><br>
-⚙️ Tech Stack
-
-Frontend: HTML, CSS (custom design)
-
-Cloud Provider: AWS (S3, CloudFront, Route 53, ACM, IAM)
-
-CI/CD: GitHub Actions
+- Frontend: HTML, CSS (custom design)
+- Cloud Provider: AWS (S3, CloudFront, Route 53, ACM, IAM, Lambda, API Gateway, DynamoDB)
+- CI/CD: GitHub Actions
