@@ -12,6 +12,7 @@ I’m still early in my coding journey, but this project focuses on designing, d
 
 ## Project Overview
 <br>
+
 # Currently implemented:
 
 * Frontend: Static HTML/CSS resume site hosted on S3.
